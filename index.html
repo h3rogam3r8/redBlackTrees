@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <title>CSE 250 Trees Validator</title>
+</head>
+<body>
+    <div id="personal-info">
+        <h1>CSE 250 Tree Validator</a></h1>
+        <p>By <a href="https://github.com/h3rogam3r8" target="_blank">Arnav Sawant</a></p>
+    </div>
+    <div id="controls">
+        <label for="nodeValue">Node Value:</label>
+        <input type="number" id="nodeValue" />
+        <button onclick="insertNode(document.getElementById('nodeValue').value)">Insert Node</button>
+        <button onclick="clearTree()">Clear Tree</button>
+    </div>
+    <canvas id="tree-canvas" width="800" height="600"></canvas>
+</body>
+</html>
+
+
+
+
