@@ -5,6 +5,17 @@ function TreeNode(value, color = 'red') {
     this.right = null;
     this.parent = null;
 }
+function showRedBlackTree() {
+    window.location.href = 'index.html';
+}
+
+function showMinHeap() {
+    window.location.href = 'work-in-progress.html';
+}
+
+function showMaxHeap() {
+    window.location.href = 'work-in-progress.html';
+}
 
 let rootNode = null;
 
@@ -171,7 +182,7 @@ function clearTree() {
 }
 
 function drawTree() {
-    const canvas = document.getElementById('canvas');
+    const canvas = document.getElementById('tree-canvas');
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
