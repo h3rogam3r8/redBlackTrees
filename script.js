@@ -118,6 +118,11 @@ function insertNode(value) {
         return;
     }
 
+    if (findNode(rootNode, numericValue)) {
+        alert("Enter a non-duplicate value");
+        return;
+    }
+
     const newNode = new TreeNode(numericValue, 'red');
 
     if (!rootNode) {
@@ -127,7 +132,7 @@ function insertNode(value) {
         insertNodeRecursive(rootNode, newNode);
         balanceRedBlackAfterInsert(newNode);
     }
-
+    document.getElementById('nodeValue').value = '';
     drawTree();
 }
 
@@ -148,7 +153,18 @@ function insertNodeRecursive(root, newNode) {
         }
     }
 }
-
+function findNode(root, value) {
+    if (!root) {
+        return null;
+    }
+    if (value === root.value) {
+        return root;
+    } else if (value < root.value) {
+        return findNode(root.left, value);
+    } else {
+        return findNode(root.right, value);
+    }
+}
 function clearTree() {
     rootNode = null;
     drawTree();
@@ -163,6 +179,7 @@ function drawTree() {
         const edgeScale = 2;
         drawNode(rootNode, canvas.width / 2, 50, 30, ctx, 1, edgeScale);
     }
+    document.body.classList.add('grow');
 }
 
 function drawNode(node, x, y, radius, ctx, depth = 1, edgeScale = 1) {
